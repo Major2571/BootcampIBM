@@ -17,8 +17,8 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(ClienteController.class)
-public class ClienteController {
+@WebMvcTest(ClienteControllerTest.class)
+public class ClienteControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -27,7 +27,7 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @InjectMocks
-    private ClienteController clienteController;
+    private ClienteControllerTest clienteController;
 
     @Test
     public void testInsertCliente() throws Exception {
