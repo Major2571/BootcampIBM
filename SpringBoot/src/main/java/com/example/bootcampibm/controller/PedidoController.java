@@ -92,6 +92,3 @@ public class PedidoController {
         return ResponseEntity.noContent().build();
     }
 }
-
-// Boa noite, pessoal!
-// Obrigada! Bom descanso a todos!
