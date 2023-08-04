@@ -31,13 +31,13 @@ public class ClienteControllerTest {
 
     @Test
     public void testInsertCliente() throws Exception {
-        Cliente clienteInserido = new Cliente(1, "joao", "joao@email.com");
+        Cliente clienteInserido = new Cliente(1, "maria", "maria@email.com");
 
         when(clienteService.insert(any(Cliente.class))).thenReturn(clienteInserido);
 
         mockMvc.perform(MockMvcRequestBuilders.post("/clientes")
             .contentType(MediaType.APPLICATION_JSON)
-            .content("{\"id\":1,\"nome\":\"joao\",\"email\":\"joao@email.com\"}"))
+            .content("{\"id\":1,\"nome\":\"maria\",\"email\":\"maria@email.com\"}"))
             .andExpect(status().isCreated())
             .andExpect(MockMvcResultMatchers.header().string("Location", "http://localhost/clientes/1"));
     }
