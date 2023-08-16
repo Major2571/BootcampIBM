@@ -1,5 +1,6 @@
 package com.todo.todobackend.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -19,7 +20,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class ToDo {
+public class ToDo implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +30,6 @@ public class ToDo {
     private String description;
 
     @JsonFormat(pattern = "yyyy/MM/dd")
-    private Date dateInitial;
     private Date dateEnd;
 
     private Boolean completed;
