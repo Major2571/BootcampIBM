@@ -33,4 +33,10 @@ public class ToDoService {
         List<ToDo> list = toDoRepository.findAll();
         return list;
     }
+
+    public ToDo create(ToDo obj) {
+        obj.setId(null);
+        return toDoRepository.save(obj);
+    }
+    
 }
