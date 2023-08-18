@@ -1,5 +1,6 @@
 package com.todo.todobackend.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,4 +19,18 @@ public class ToDoService {
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto nao encontrado: " + id + ", Tipo: "+  ToDo.class.getName()));
     }
     
+    public List<ToDo> findAllOpen() {
+        List<ToDo> list = toDoRepository.findAllOpen();
+        return list;
+    }
+
+    public List<ToDo> findAllClosed() {
+        List<ToDo> listaFechada = toDoRepository.findAllClosed();
+        return listaFechada;
+    }
+
+    public List<ToDo> findAll() {
+        List<ToDo> list = toDoRepository.findAll();
+        return list;
+    }
 }
