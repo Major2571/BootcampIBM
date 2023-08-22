@@ -38,8 +38,20 @@ public class ToDoService {
         obj.setId(null);
         return toDoRepository.save(obj);
     }
-    
+
     public void delete(Integer id) {
         toDoRepository.deleteById(id);
     }
+
+    public ToDo update(Integer id, ToDo obj) {
+        
+        ToDo attObj = findById(id);
+        attObj.setTitle(obj.getTitle());
+        attObj.setDescription(obj.getDescription());
+        attObj.setDateEnd(obj.getDateEnd());
+        attObj.setCompleted(obj.getCompleted());
+
+        return toDoRepository.save(attObj);
+    }
+
 }
