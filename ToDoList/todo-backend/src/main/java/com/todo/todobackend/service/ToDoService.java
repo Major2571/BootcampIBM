@@ -39,4 +39,7 @@ public class ToDoService {
         return toDoRepository.save(obj);
     }
     
+    public void delete(Integer id) {
+        toDoRepository.deleteById(id);
+    }
 }
