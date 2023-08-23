@@ -56,13 +56,13 @@ public class ToDoController {
         return ResponseEntity.created(uri).build();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}/delete")
     public ResponseEntity<Void> delete(@PathVariable Integer id){
         toDoService.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}/update")
     public ResponseEntity<ToDo> update(@PathVariable Integer id, @RequestBody ToDo obj){
         ToDo attObj = toDoService.update(id, obj);
         return ResponseEntity.ok().body(attObj);
