@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.todo.todobackend.domain.ToDo;
 import com.todo.todobackend.repository.ToDoRepository;
+import org.springframework.stereotype.Service;
 import com.todo.todobackend.service.exceptions.ObjectNotFoundException;
 
+@Service
 public class ToDoService {
 
     @Autowired
