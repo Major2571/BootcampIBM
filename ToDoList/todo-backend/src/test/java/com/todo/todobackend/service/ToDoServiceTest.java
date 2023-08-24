@@ -25,4 +25,17 @@ public class ToDoServiceTest {
 
     }
 
+    @Test
+    public void testFindAllOpen() {
+        // Cenário
+        List<ToDo> mockList = new ArrayList<>();
+        mockList.add(new ToDo());
+        when(toDoRepository.findAllOpen()).thenReturn(mockList);
+
+        // Execução
+        List<ToDo> result = toDoService.findAllOpen();
+
+        // Verificação
+        assertEquals(1, result.size());
+    }
 }
