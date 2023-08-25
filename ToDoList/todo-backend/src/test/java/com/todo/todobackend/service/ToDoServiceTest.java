@@ -50,4 +50,16 @@ public class ToDoServiceTest {
         assertThrows(ObjectNotFoundException.class, () -> toDoService.findById(1));
     }
 
+    @Test
+    public void testCreate() {
+        // Cenário
+        ToDo mockToDo = new ToDo();
+        when(toDoRepository.save(any(ToDo.class))).thenReturn(mockToDo);
+
+        // Execução
+        ToDo result = toDoService.create(new ToDo());
+
+        // Verificação
+        assertNotNull(result);
+    }
 }
