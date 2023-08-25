@@ -62,4 +62,10 @@ public class ToDoServiceTest {
         // Verificação
         assertNotNull(result);
     }
+
+    @Test
+    public void testDelete() {
+        assertDoesNotThrow(() -> toDoService.delete(1));
+        verify(toDoRepository, times(1)).deleteById(1);
+    }
 }
