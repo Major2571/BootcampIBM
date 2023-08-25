@@ -38,4 +38,16 @@ public class ToDoServiceTest {
         // Verificação
         assertEquals(1, result.size());
     }
+
+    // Testes para outros métodos seguiriam o mesmo padrão
+
+    @Test
+    public void testFindByIdNotFound() {
+        // Cenário
+        when(toDoRepository.findById(1)).thenReturn(Optional.empty());
+
+        // Execução e Verificação
+        assertThrows(ObjectNotFoundException.class, () -> toDoService.findById(1));
+    }
+
 }
