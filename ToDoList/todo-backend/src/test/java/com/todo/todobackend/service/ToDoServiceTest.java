@@ -68,4 +68,22 @@ public class ToDoServiceTest {
         assertDoesNotThrow(() -> toDoService.delete(1));
         verify(toDoRepository, times(1)).deleteById(1);
     }
+
+    @Test
+    public void testUpdate() {
+        // Cenário
+        ToDo existingToDo = new ToDo();
+        existingToDo.setId(1);
+        when(toDoRepository.findById(1)).thenReturn(Optional.of(existingToDo));
+        when(toDoRepository.save(any(ToDo.class))).thenReturn(existingToDo);
+
+        // Execução
+        ToDo updatedToDo = new ToDo();
+        updatedToDo.setTitle("Updated ToDo");
+        ToDo result = toDoService.update(1, updatedToDo);
+
+        // Verificação
+        assertNotNull(result);
+        assertEquals("Updated ToDo", result.getTitle());
+    }
 }
