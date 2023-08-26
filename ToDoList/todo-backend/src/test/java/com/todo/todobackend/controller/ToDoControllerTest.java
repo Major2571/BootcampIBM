@@ -31,4 +31,10 @@ public class ToDoControllerTest {
                 .andExpect(status().isCreated())
                 .andExpect(MockMvcResultMatchers.header().string("Location", "http://localhost/to-do/1"));
     }
+
+    @Test
+    public void testDelete() throws Exception{
+        mockMvc.perform(MockMvcRequestBuilders.delete("/to-do/1/delete")).andExpect(status().isNoContent());
+    }
+
 }
