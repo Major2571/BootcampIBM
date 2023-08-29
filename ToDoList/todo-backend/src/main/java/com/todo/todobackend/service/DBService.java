@@ -12,11 +12,16 @@ import com.todo.todobackend.repository.ToDoRepository;
 
 @Service
 public class DBService {
-    
+
     @Autowired
     private ToDoRepository toDoRepository;
 
-    public void instanciaBancoDeDados() throws ParseException{
+    /**
+     * Populate the database with initial ToDo items.
+     *
+     * @throws ParseException if there is an error parsing dates.
+     */
+    public void instanciaBancoDeDados() throws ParseException {
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
