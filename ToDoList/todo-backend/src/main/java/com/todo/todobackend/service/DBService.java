@@ -23,10 +23,10 @@ public class DBService {
      */
     public void instanciaBancoDeDados() throws ParseException {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-        ToDo t1 = new ToDo(null, "Terminar projeto SpringBoot", "Terminar ToDoList do Bootcamp", sdf.parse("20/08/2023"), false);
-        ToDo t2 = new ToDo(null, "Terminar Livro", "Terminar de ler Jantar Secreto", sdf.parse("30/08/2023"), false);
+        ToDo t1 = new ToDo(null, "Terminar projeto SpringBoot", "Terminar ToDoList do Bootcamp", sdf.parse("2023-02-30"), false);
+        ToDo t2 = new ToDo(null, "Terminar Livro", "Terminar de ler Jantar Secreto", sdf.parse("2023-02-30"), false);
 
         toDoRepository.saveAll(Arrays.asList(t1, t2));
 

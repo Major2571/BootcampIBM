@@ -29,7 +29,7 @@ public class ToDo implements Serializable{
     private String title;
     private String description;
 
-    @JsonFormat(pattern = "dd/MM/yyyy")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date dateEnd;
 
     private Boolean completed;

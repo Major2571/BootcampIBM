@@ -67,6 +67,7 @@ public class ToDoService {
      */
     public ToDo create(ToDo obj) {
         obj.setId(null);
+        obj.setCompleted(false);
         return toDoRepository.save(obj);
     }
 

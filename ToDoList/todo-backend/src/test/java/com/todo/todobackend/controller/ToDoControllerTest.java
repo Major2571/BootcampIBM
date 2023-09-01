@@ -33,8 +33,8 @@ public class ToDoControllerTest {
     @Test
     public void testCreate() throws Exception {
         // Cenário
-        String dateSrt = "20/08/2023";
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String dateSrt = "2023-09-03";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
         ToDo mockToDo = new ToDo(1, "Something", "Someone", sdf.parse(dateSrt), false);
         when(toDoService.create(any(ToDo.class))).thenReturn(mockToDo);
@@ -43,7 +43,7 @@ public class ToDoControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.post("/to-do")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(
-                        "{\"id\":1,\"title\":\"Something\",\"description\":\"Someone\",\"dateEnd\":\"20/08/2023\",\"completed\":\"false\"}"))
+                        "{\"id\":1,\"title\":\"Something\",\"description\":\"Someone\",\"dateEnd\":\"2023-09-03\",\"completed\":\"false\"}"))
                 .andExpect(status().isCreated())
                 .andExpect(MockMvcResultMatchers.header().string("Location", "http://localhost/to-do/1"));
     }
