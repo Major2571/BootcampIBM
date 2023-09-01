@@ -1,1 +1,151 @@
-<p>to-do-list works!</p>
+<form class="w-1/4 mx-auto my-10 px-14 py-12 bg-gray-100 border border-gray-200 rounded-md shadow-md">
+
+    <h2 class="pb-2 text">
+        Adicione um ToDo:
+    </h2>
+
+    <div class="mb-6">
+        <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Title</label>
+        <input type="text" id="title" name="title" [(ngModel)]="toDo.title"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="" required>
+    </div>
+
+    <div class="mb-6">
+        <label for="description" class="block mb-2 text-sm font-medium text-gray-900">description</label>
+        <input type="text" id="description" name="description" [(ngModel)]="toDo.description"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="" required>
+    </div>
+
+    <div class="mb-6">
+        <label for="dateEnd" class="block mb-2 text-sm font-medium text-gray-900">dateEnd</label>
+        <input type="date" id="dateEnd" name="dateEnd" [(ngModel)]="toDo.dateEnd"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="" required>
+    </div>
+
+    <div class="mb-6">
+        <label for="completed" class="block mb-2 text-sm font-medium text-gray-900">Status</label>
+        <input type="text" id="completed" name="completed" [(ngModel)]="toDo.completed"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="" required>
+    </div>
+
+
+    <div class="flex justify-evenly">
+        <button type="submit"
+            class="cursor-pointer text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            (click)="saveNewToDo()"> Salvar </button>
+    </div>
+</form>
+
+<!-- <div class="filter-buttons">
+    <button (click)="filterChange('all')">Todas</button>
+    <button (click)="filterChange('closed')">Concluidas</button>
+    <button (click)="filterChange('open')">Pendentes</button>
+</div> -->
+
+
+<!-- <section class="cards-container">
+    <div *ngFor="let t of listToDo" class="card" [style.background-color]="getRandomColor()">
+        <div>
+            <div class="title">
+                <h1>{{ t.title }}</h1>
+            </div>
+            <div class="description">
+                <p>{{ t.description }}</p>
+            </div>
+            <div class="flex gap-2 items-end">
+                <i class="fa-regular fa-calendar"></i>
+                <p>{{ t.dateEnd | date: 'MMM dd, yyyy' }}</p>
+            </div>
+        </div>
+    </div>
+</section> -->
+<section class="cards-container">
+    <div class="card" [style.background-color]="getRandomColor()">
+        <div>
+            <div class="title">
+                <h1>Terminar Projeto</h1>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque architecto voluptatibus odit neque sit dignissimos excepturi iste. </p>
+            </div>
+            <div class="flex gap-2 items-end">
+                <i class="fa-regular fa-calendar"></i>
+                <p>Mar 02, 2023</p>
+            </div>
+        </div>
+    </div>
+    <div class="card" [style.background-color]="getRandomColor()">
+        <div>
+            <div class="title">
+                <h1>Terminar Projeto</h1>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque architecto voluptatibus odit neque sit dignissimos excepturi iste. </p>
+            </div>
+            <div class="flex gap-2 items-end">
+                <i class="fa-regular fa-calendar"></i>
+                <p>Mar 02, 2023</p>
+            </div>
+        </div>
+    </div>
+    <div class="card" [style.background-color]="getRandomColor()">
+        <div>
+            <div class="title">
+                <h1>Terminar Projeto</h1>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque architecto voluptatibus odit neque sit dignissimos excepturi iste. </p>
+            </div>
+            <div class="flex gap-2 items-end">
+                <i class="fa-regular fa-calendar"></i>
+                <p>Mar 02, 2023</p>
+            </div>
+        </div>
+    </div>
+    <div class="card" [style.background-color]="getRandomColor()">
+        <div>
+            <div class="title">
+                <h1>Terminar Projeto</h1>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque architecto voluptatibus odit neque sit dignissimos excepturi iste. </p>
+            </div>
+            <div class="flex gap-2 items-end">
+                <i class="fa-regular fa-calendar"></i>
+                <p>Mar 02, 2023</p>
+            </div>
+        </div>
+    </div>
+    <div class="card" [style.background-color]="getRandomColor()">
+        <div>
+            <div class="title">
+                <h1>Terminar Projeto</h1>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque architecto voluptatibus odit neque sit dignissimos excepturi iste. </p>
+            </div>
+            <div class="flex gap-2 items-end">
+                <i class="fa-regular fa-calendar"></i>
+                <p>Mar 02, 2023</p>
+            </div>
+        </div>
+    </div>
+    <div class="card" [style.background-color]="getRandomColor()">
+        <div>
+            <div class="title">
+                <h1>Terminar Projeto</h1>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque architecto voluptatibus odit neque sit dignissimos excepturi iste. </p>
+            </div>
+            <div class="flex gap-2 items-end">
+                <i class="fa-regular fa-calendar"></i>
+                <p>Mar 02, 2023</p>
+            </div>
+        </div>
+    </div>
+</section>
