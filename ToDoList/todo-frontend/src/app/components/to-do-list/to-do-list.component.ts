@@ -23,7 +23,12 @@ export class ToDoListComponent implements OnInit {
 
   viewAllToDo(): void {
     this.service.getAllToDo()
-      .subscribe(response => this.listToDo = response);
+      .subscribe(response => {
+        response.forEach((item) => {
+          item.color = this.getRandomColor();
+        });
+        this.listToDo = response;
+      });
   }
 
   findAllOpenToDo(): void {
@@ -36,21 +41,13 @@ export class ToDoListComponent implements OnInit {
       .subscribe(response => this.listToDo = response)
   }
 
-
-  saveNewToDo(): void {
-    this.service.postToDo(this.toDo)
-      .subscribe(response => {
-        this.listToDo.push(response);
-      });
-  }
-
   getRandomColor() {
     const min = 150;
     const max = 255;
 
-    const r = Math.floor(Math.random() * (max-min+1) + min);
-    const g = Math.floor(Math.random() * (max-min+1) + min);
-    const b = Math.floor(Math.random() * (max-min+1) + min);
+    const r = Math.floor(Math.random() * (max - min + 1) + min);
+    const g = Math.floor(Math.random() * (max - min + 1) + min);
+    const b = Math.floor(Math.random() * (max - min + 1) + min);
 
     return `rgb(${r},${g},${b})`;
   }
