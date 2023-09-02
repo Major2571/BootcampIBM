@@ -3,5 +3,6 @@ export interface toDo {
     title: String,
     description?: String,
     dateEnd: Date,
-    completed: Boolean
+    completed: Boolean,
+    color: String
 }
