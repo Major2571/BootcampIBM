@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as Masonry from 'masonry-layout';
 import { toDo } from 'src/app/model/to-do';
 import { ToDoService } from 'src/app/service/to-do.service';
 
@@ -51,5 +52,10 @@ export class ToDoListComponent implements OnInit {
 
     return `rgb(${r},${g},${b})`;
   }
+
+  checkedToDo(t: toDo): void{
+    t.completed = true;
+  }
+
 
 }
