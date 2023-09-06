@@ -1,0 +1,66 @@
+.new-to-do {
+    width: 100%;
+}
+
+*:focus {
+    outline: none;
+}
+
+.form-new {
+    background-color: #fffccb;
+    border: 1px solid #fff38a;
+}
+
+input#title {
+    width: 100%;
+    height: 2rem;
+    font-size: 1.5em;
+    padding: 1em 0;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: rgba(199, 197, 197, 0.253);
+    background-color: #ffffff00;
+    font-weight: 500;
+}
+
+textarea#desc {
+    width: 100%;
+    height: 5rem;
+    font-size: 1.2em;
+    padding: 1em 0;
+    background-color: #ffffff00;
+}
+
+input#dateEnd {
+    height: 2rem;
+    font-size: 1.2em;
+    padding: 1em 0;
+    background-color: #ffffff00;
+    color: #838181f5;
+}
+
+.add-newToDo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+button {
+    background-color: #8de99d;
+    display: flex;
+    gap: .5em;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    padding: .5em 1.3em;
+    border-radius: 5px;
+    font-weight: 500;
+    width: 100%;
+}
+
+button:hover{
+    background-color: #71e083;
+    transition: all .3s ease;
+}

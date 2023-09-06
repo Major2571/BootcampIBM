@@ -19,11 +19,16 @@ export class ToDoFormComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
   
+  
+
   saveNewToDo(): void {
     this.service.postToDo(this.toDo)
       .subscribe(response => {
         this.listToDo.push(response);
+        this.toDo = {} as toDo;
+        alert("New toDO added")
       });
   }
+
 
 }
