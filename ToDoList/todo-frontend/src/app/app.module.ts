@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { MatMenuModule } from '@angular/material/menu';
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatIconModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
