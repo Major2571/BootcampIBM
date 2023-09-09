@@ -30,11 +30,11 @@ export class ToDoService {
   }
 
   putToDo(obj: toDo): Observable<toDo>{
-    return this.http.put<toDo>( this.apiUrl + obj.id + '/update', obj )
+    return this.http.put<toDo>( this.apiUrl + '/' + obj.id + '/update', obj )
   }
 
   deleteToDo(obj: toDo): Observable<toDo>{
-    return this.http.delete<toDo>( this.apiUrl + obj.id + '/delete' )
+    return this.http.delete<toDo>( this.apiUrl + '/' + obj.id + '/delete' )
   }
 
 }
