@@ -14,27 +14,12 @@ export class ToDoFormComponent implements OnInit {
 
   listToDo: toDo[] = [];
 
-  constructor(private service: ToDoService) { };
-  
-  ngOnInit(): void {
-    this.viewAllToDo();
-  }
+  btn: boolean = true;
+  cardsContainer: boolean = true;
 
-  saveNewToDo(form: NgForm) {
-    if (this.toDo.id !== undefined) {
-      this.service.putToDo(this.toDo).subscribe(() => {
-        this.cleanForm(form);
-      });
-    } else {
-      this.service.postToDo(this.toDo).subscribe(() => {
-        this.cleanForm(form);
-      });
-    }
-  }
-  
-  cleanForm(form: NgForm) {
-    form.resetForm();
-    this.toDo = {} as toDo;
+  constructor(private service: ToDoService) { };
+
+  ngOnInit(): void {
     this.viewAllToDo();
   }
 
@@ -48,14 +33,35 @@ export class ToDoFormComponent implements OnInit {
       });
   }
 
-  findAllOpenToDo(): void {
-    this.service.getAllToDoOpen()
-      .subscribe(response => this.listToDo = response)
+  saveNewToDo(form: NgForm) {
+    if (this.toDo.id !== undefined) {
+      this.service.putToDo(this.toDo).subscribe(() => {
+        this.cleanForm(form);
+        this.btn = true;
+      });
+    } else {
+      this.service.postToDo(this.toDo).subscribe(() => {
+        this.cleanForm(form);
+      });
+    }
   }
 
-  findAllClosedToDo(): void {
-    this.service.getAllToDoClosed()
-      .subscribe(response => this.listToDo = response)
+  editToDo(t: toDo): void {
+    this.toDo = { ...t };
+    this.btn = false;
+  }
+
+  deleteToDo(t: toDo) {
+    this.service.deleteToDo(t)
+      .subscribe(() => {
+        this.viewAllToDo();
+      });
+  }
+
+  cleanForm(form: NgForm) {
+    form.resetForm();
+    this.toDo = {} as toDo;
+    this.viewAllToDo();
   }
 
   getRandomColor() {
@@ -69,23 +75,13 @@ export class ToDoFormComponent implements OnInit {
     return `rgb(${r},${g},${b})`;
   }
 
-  checkedToDo(t: toDo): void{
-    t.completed = !t.completed;
+  checkedToDo(t: toDo): void {
+    t.completed = !t.completed
   }
 
-  deleteToDo(t: toDo) {
-    this.service.deleteToDo(t)
-      .subscribe(() => {
-        this.viewAllToDo();
-      });
-  }
-
-  selectToDo( index: number ): void {
-    this.toDo = this.listToDo[index];
-  }
-
-  editToDo( t: toDo ):void {
-    console.log('Edit button clicked:', t);
-    this.toDo = { ...t };
+  btnCancel(): void {
+    this.toDo = {} as toDo;
+    this.btn = true;
+    this.cardsContainer = true;
   }
 }
