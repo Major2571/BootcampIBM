@@ -116,6 +116,27 @@ Como parte do bootcamp, os participantes tiveram a chance de trabalhar em um min
 </details>
 
 
+<details>
+
+<summary> <b> Screenshots </b> </summary>
+
+### Tela Inicial:
+
+![image 1](https://github.com/Major2571/BootcampIBM/assets/99849455/18f896bd-dd93-4d1b-8767-b62fd927fe62)
+
+### Menu de ações para cada ToDo:
+![Group 3](https://github.com/Major2571/BootcampIBM/assets/99849455/1d913a7b-30f0-4608-964d-6f91e86af6f5)
+
+### Edição do item selecionado:
+![Group 4](https://github.com/Major2571/BootcampIBM/assets/99849455/6c034386-35e7-443a-8ccc-209f84d571d7)
+
+### Marcar como concluído:
+![Group 1](https://github.com/Major2571/BootcampIBM/assets/99849455/70264c6a-8d2b-41e2-abb0-821676f08813)
+
+
+</details>
+
+
 ## Projeto Final: Casa de Temporada
 O projeto final do Bootcamp IBM 2023 consistiu na criação de uma API REST e uma aplicação Angular para gerenciar reservas em uma Casa de Temporada. Você pode encontrar mais informações aqui:
 
