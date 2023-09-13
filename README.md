@@ -30,8 +30,89 @@ Como parte do bootcamp, os participantes tiveram a chance de trabalhar em um min
 ![Spring](https://img.shields.io/badge/spring-0D1117.svg?style=for-the-badge&logo=spring&logoColor=236DB33F&labelColor=0D1117)
 ![Java](https://img.shields.io/badge/Java-0D1117?logo=openjdk&logoColor=ED8B00&style=for-the-badge)
 
+
 <details>
-  <summary> <b> Screenshots </b> </summary>
+
+<summary> <b> Endpoints da API </b> </summary>
+
+### Criar um ToDo:
+**Método**: POST </br>
+**Endpoint**: /to-do
+
+**Corpo da solicitação (JSON):**
+```bash
+{
+	"title":"Supermercado",
+	"description":  "Comprar: arroz, feijão, macarrão",
+	"dateEnd":  "2023-08-06"
+}
+```
+
+**Resposta (JSON):**
+```bash
+{
+	"id":  1,
+	"title":  "Supermercado",
+	"description":  "Comprar: arroz, feijão, macarrão",
+	"dateEnd":  "2023-08-06",
+	"completed":  false
+}
+```
+
+### Obter todos os ToDos:
+**Método**: GET </br>
+**Endpoint**: /to-do/all
+
+**Resposta (JSON):**
+```bash
+[
+	{
+		"id":  1,
+		"title":  "Supermercado",
+		"description":  "Comprar: arroz, feijão, macarrão",
+		"dateEnd":  "2023-08-06",
+		"completed":  false
+	},
+	{
+		"id":  2,
+		"title":  "Ler um Livro",
+		"description":  "Ler um capítulo do livro O Hobbit",
+		"dateEnd":  "2023-08-07",
+		"completed":  false
+	},
+	...
+]
+```
+
+### Atualizar um ToDo:
+**Método**: PUT </br>
+**Endpoint**: /to-do/{id}/update
+
+**Corpo da solicitação (JSON):**
+```bash
+{
+    "title":  "Ler um Livro",
+    "description":  "Ler um capítulo do livro 1984",
+    "dateEnd":  "2023-08-07",
+    "completed":  false
+}
+```
+
+**Resposta (JSON):**
+```bash
+{
+    "id": 2,
+    "title": "Ler um Livro",
+    "description": "Ler um capítulo do livro 1984",
+    "dateEnd": "2023-08-07",
+    "completed": false
+}
+```
+
+### Apagar um ToDo:
+**Método**: DELETE </br>
+**Endpoint**: /to-do/{id}/delete
+
 </details>
 
 
