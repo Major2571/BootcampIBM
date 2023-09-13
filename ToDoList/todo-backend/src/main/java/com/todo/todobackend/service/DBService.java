@@ -25,10 +25,12 @@ public class DBService {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-        ToDo t1 = new ToDo(null, "Terminar projeto SpringBoot", "Terminar ToDoList do Bootcamp", sdf.parse("2023-02-30"), false);
-        ToDo t2 = new ToDo(null, "Terminar Livro", "Terminar de ler Jantar Secreto", sdf.parse("2023-02-30"), false);
+        ToDo t1 = new ToDo(null, "Supermercado", "Comprar: arroz, feijão, macarrão", sdf.parse("2023-08-06"), false);
+        ToDo t2 = new ToDo(null, "Ler um Livro", "Ler um capítulo do livro O Hobbit", sdf.parse("2023-08-07"), false);
+        ToDo t3 = new ToDo(null, "Terminar projeto JS", "Terminar projeto de JS", sdf.parse("2023-08-13"), false);
+        ToDo t4 = new ToDo(null, "Desafio IBM", "Fazer desafio final do Bootcamp IBM para próxima fase", sdf.parse("2023-08-13"), false);
 
-        toDoRepository.saveAll(Arrays.asList(t1, t2));
+        toDoRepository.saveAll(Arrays.asList(t1, t2, t3, t4));
 
     }
 }

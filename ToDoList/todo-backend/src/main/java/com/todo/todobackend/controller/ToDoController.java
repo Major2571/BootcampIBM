@@ -82,7 +82,7 @@ public class ToDoController {
     public ResponseEntity<ToDo> create(@RequestBody ToDo obj) {
         obj = toDoService.create(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
-        return ResponseEntity.created(uri).build();
+        return ResponseEntity.created(uri).body(obj);
     }
 
     /**
